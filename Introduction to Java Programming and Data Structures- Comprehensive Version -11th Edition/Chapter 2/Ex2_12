@@ -1,0 +1,17 @@
+// 2.12 (Physics: finding runway length)
+import java.util.Scanner;
+
+public class Ex2_12 {
+	public static void main(String[] args) {
+		double speed, accelation, length;
+		Scanner input = new Scanner(System.in);
+		
+		System.out.print("Enter speed and acceleration: ");
+		speed = input.nextDouble();
+		accelation = input.nextDouble();
+		length = Math.pow(speed, 2) / (2 * accelation);
+		
+		System.out.println("The minimum runway length for this airplane is "
+				+ length);
+	}
+}
