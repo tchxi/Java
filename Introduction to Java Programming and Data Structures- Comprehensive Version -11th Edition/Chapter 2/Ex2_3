@@ -1,0 +1,16 @@
+// 2.3 (Convert meters into feet)
+import java.util.Scanner;
+
+public class Ex2_3 {
+	public static void main(String[] args) {
+		double meter, feet;
+		Scanner input = new Scanner(System.in);
+		
+		System.out.print("Enter a value for meter: ");
+		meter = input.nextDouble();
+		feet = 3.2786 * meter;
+		
+		System.out.println(meter + " meters is "
+				+ feet + " feet");
+	}
+}
