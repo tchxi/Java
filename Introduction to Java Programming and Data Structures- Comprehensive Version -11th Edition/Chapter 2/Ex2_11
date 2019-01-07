@@ -1,0 +1,28 @@
+// 2.11 (Population projection)
+import java.util.Scanner;
+
+public class Ex2_11 {
+	public static void main(String[] args) {
+		int numberOfYear, totalSecond;
+		double birth, death, immigrant;
+		int currentPopulation = 312032486;
+		int secondPerYear = 60 * 60 * 24 * 365;
+		int futurePopulation;
+		// In Java, we should always make large number first
+		// to gain a more accurate value
+		Scanner input = new Scanner(System.in);
+		
+		System.out.print("Enter the number of years: ");
+		numberOfYear = input.nextInt();
+		totalSecond = secondPerYear * numberOfYear;
+		birth = totalSecond / 7;
+		death = totalSecond / 13;
+		immigrant = totalSecond / 45;
+		
+		futurePopulation = (int) (currentPopulation
+				+ (birth - death + immigrant));
+		
+		System.out.println("The population in "
+				+ numberOfYear + " years is " + futurePopulation);
+	}
+}
