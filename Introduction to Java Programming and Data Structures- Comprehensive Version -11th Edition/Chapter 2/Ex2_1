@@ -1,0 +1,16 @@
+// 2.1 (Convert mile to kilometer)
+import java.util.Scanner;
+
+public class Ex2_1 {
+	public static void main(String[] args) {
+		double mile, kilometer;
+		Scanner input = new Scanner(System.in);
+		
+		System.out.print("Enter miles: ");
+		mile = input.nextDouble();
+		kilometer = 1.6 * mile;
+		
+		System.out.println(mile +" miles is " + kilometer 
+				+ " kilometers");
+	}
+}
