@@ -1,0 +1,19 @@
+// *2.17 (Science: wind-chill temperature)
+import java.util.Scanner;
+
+public class Ex2_17 {
+	public static void main(String[] args) {
+		double tempF, windSpeed, windChillIndex;
+		Scanner input = new Scanner(System.in);
+		
+		System.out.print("Enter the temperature in Fahrenheit between -58°F and 41°F: ");
+		tempF = input.nextDouble();
+		System.out.print("Enter the wind speed (7 = 2) in miles per hour: ");
+		windSpeed = input.nextDouble();
+		windChillIndex = 35.74 + 0.6215 * tempF
+				- 35.75 * Math.pow(windSpeed, 0.16) 
+				+ 0.4275 * tempF * Math.pow(windSpeed, 0.16);
+		
+		System.out.println("The wind chill index is " + windChillIndex);
+	}
+}
