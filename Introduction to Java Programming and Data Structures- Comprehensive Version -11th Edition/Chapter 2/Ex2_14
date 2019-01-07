@@ -1,0 +1,20 @@
+// *2.14 (Health application: computing BMI)
+import java.util.Scanner;
+
+public class Ex2_14 {
+	public static void main(String[] args) {
+		double weightInPound, weight, heightInInch, height;
+		double BMI;
+		Scanner input = new Scanner(System.in);
+		
+		System.out.print("Enter weight in pounds: ");
+		weightInPound = input.nextDouble();
+		System.out.print("Enter weight in inches: ");
+		heightInInch = input.nextDouble();
+		weight = weightInPound * 0.45359237;
+		height = heightInInch * 0.0254;
+		BMI = weight / Math.pow(height, 2);
+		
+		System.out.println("BMI is " + BMI);
+	}
+}
