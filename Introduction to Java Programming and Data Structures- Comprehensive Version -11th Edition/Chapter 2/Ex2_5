@@ -1,0 +1,19 @@
+// *2.5 (Financial application: calculate tips)
+import java.util.Scanner;
+
+public class Ex2_5 {
+	public static void main(String[] args) {
+		double subtotal, gratuityRate, gratuity, total;
+		Scanner input = new Scanner(System.in);
+		
+		System.out.print("Enter the subtotal and a gratuity rate: ");
+		subtotal = input.nextDouble();
+		gratuityRate = input.nextDouble();
+		gratuity = subtotal * (gratuityRate * 0.01);
+		total = subtotal + gratuity;
+		
+		System.out.println("The gratuity is $" + gratuity
+				+ " and total is $" + total);
+		
+	}
+}
