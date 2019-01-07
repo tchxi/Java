@@ -1,0 +1,20 @@
+// 2.2 (Compute the volume of a triangle)
+import java.util.Scanner;
+
+public class Ex2_2 {
+	public static void main(String[] args) {
+		double length, height, area, volume;
+		Scanner input = new Scanner(System.in);
+		
+		System.out.print("Enter length of the sides"
+				+ " and height of the Equilateral triangle: ");
+		length = input.nextDouble();
+		height = input.nextDouble();
+		area = (Math.pow(3, 0.5) / 4) * Math.pow(length, 2);
+		volume = area * height;
+		
+		System.out.println("The area is " + area);
+		System.out.println("The volume of the"
+				+ " Triangular prism is " + volume);
+	}
+}
