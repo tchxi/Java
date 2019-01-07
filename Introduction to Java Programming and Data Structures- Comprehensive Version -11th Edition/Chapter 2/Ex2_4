@@ -1,0 +1,16 @@
+// 2.4 (Convert square meter into ping)
+import java.util.Scanner;
+
+public class Ex2_4 {
+	public static void main(String[] args) {
+		double squareMeter, ping;
+		Scanner input = new Scanner(System.in);
+		
+		System.out.print("Enter a number in square meters: ");
+		squareMeter = input.nextDouble();
+		ping = 0.3025 * squareMeter;
+		
+		System.out.println(squareMeter + " square meters is "
+				+ ping + "5 pings");
+	}
+}
