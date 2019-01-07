@@ -1,0 +1,21 @@
+// **2.13 (Financial application: compound value)
+import java.util.Scanner;
+
+public class Ex2_13 {
+	public static void main(String[] args) {
+		double saving, interest;
+		double sum = 0;
+		double interestRate = 0.0375 / 12;
+		Scanner input = new Scanner(System.in);
+		
+		System.out.print("Enter the monthly saving amount: ");
+		saving = input.nextDouble();
+		interest = 1 + interestRate;
+		
+		for (int i = 1; i <= 6; i++) {
+			sum += saving * Math.pow(interest, i);
+			System.out.println("After " + i + " month,"
+					+ " the account value is " + sum);
+		}
+	}
+}
