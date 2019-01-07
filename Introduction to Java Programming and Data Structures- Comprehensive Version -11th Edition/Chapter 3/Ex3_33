@@ -1,0 +1,23 @@
+// *3.33 (Financial: compare costs)
+import java.util.Scanner;
+
+public class Ex3_33 {
+	public static void main(String[] args) {
+		double w1, p1, w2, p2;
+		Scanner input = new Scanner(System.in);
+		
+		System.out.print("Enter weight and price for package 1: ");
+		w1 = input.nextDouble();
+		p1 = input.nextDouble();
+		System.out.print("Enter weight and price for package 2: ");
+		w2 = input.nextDouble();
+		p2 = input.nextDouble();
+		
+		if (w1 / p1 > w2 / p2)
+			System.out.println("Package 1 has a better price.");
+		else if (w1 / p1 < w2 / p2)
+			System.out.println("Package 2 has a better price.");
+		else
+			System.out.println("They are the same.");
+	}
+}
