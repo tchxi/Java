@@ -1,0 +1,19 @@
+// 2.10 (Science: calculating energy)
+import java.util.Scanner;
+
+public class Ex2_10 {
+	public static void main(String[] args) {
+		double water, initialTemp, finalTemp, energy;
+		Scanner input = new Scanner(System.in);
+		
+		System.out.print("Enter the amount of water in kilograms: ");
+		water = input.nextDouble();
+		System.out.print("Enter the initial temperature: ");
+		initialTemp = input.nextDouble();
+		System.out.print("Enter the final temperature: ");
+		finalTemp = input.nextDouble();
+		energy = water * (finalTemp - initialTemp) * 4184;
+		
+		System.out.println("The energy needed is " + energy);
+	}
+}
