@@ -1,0 +1,20 @@
+// *6.13 (Sum series)
+
+public class Ex6_13 {
+	public static void main(String[] args) {
+		int n = 20;
+		
+		System.out.println("i\t\tm(i)");
+		for (int i = 1; i <= n; i++)
+			System.out.println(i + "\t\t" + m(i));
+	}
+	
+	public static double m(int n) {
+		double sum = 0;
+		
+		for (double i = 1; i <= n; i++) 
+			sum += i / (i + 2);
+		
+		return sum;
+	}
+}
