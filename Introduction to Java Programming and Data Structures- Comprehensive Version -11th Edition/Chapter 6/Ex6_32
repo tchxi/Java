@@ -1,0 +1,52 @@
+// **6.32 (Game: chance of winning at craps)
+
+public class Ex6_32 {
+	public static void main(String[] args) {
+		int n = 15000;
+		
+		System.out.println("When you play craps for "
+				+ n + " times, you can win "
+				+ winningCraps(n) + " times");
+	}
+	
+	public static int winningCraps(int numberOfTime) {
+		int win = 0;
+		
+		for (int i = 0; i < numberOfTime; i++) {
+			int dice1 = (int) (Math.random() * 6) + 1;
+			int dice2 = (int) (Math.random() * 6) + 1;
+			int sum = dice1 + dice2;
+			int point;
+			
+			// System.out.println("You rolled " + dice1 + " + "
+			//		+ dice2 + " = " + sum);
+			
+			// if ((sum == 2) || (sum == 3) || (sum == 12))
+				// System.out.println("You lose");
+			/*else*/ if ((sum == 7) || (sum == 11)) {
+				// System.out.println("You win");
+				win++;
+			}
+			else {
+				// System.out.println("point is " + sum);
+				do {
+					dice1 = (int) (Math.random() * 6) + 1;
+					dice2 = (int) (Math.random() * 6) + 1;
+					point = dice1 + dice2;
+					// System.out.println("You rolled " + dice1 + " + "
+					// 		+ dice2 + " = " + point);
+					
+					if (point == sum) {
+						// System.out.println("You win");
+						win++;
+					}
+					
+					// if (point == 7)
+						// System.out.println("You lose");
+				} while ((point != 7) && (point != sum));
+			}
+		}
+		
+		return win++;
+	}
+}
