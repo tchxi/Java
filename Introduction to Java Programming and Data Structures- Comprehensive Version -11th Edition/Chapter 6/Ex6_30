@@ -1,0 +1,34 @@
+// **6.30 (Game: craps)
+
+public class Ex6_30 {
+	public static void main(String[] args) {
+		int dice1 = (int) (Math.random() * 6) + 1;
+		int dice2 = (int) (Math.random() * 6) + 1;
+		int sum = dice1 + dice2;
+		int point;
+		
+		System.out.println("You rolled " + dice1 + " + "
+				+ dice2 + " = " + sum);
+		
+		if ((sum == 2) || (sum == 3) || (sum == 12))
+			System.out.println("You lose");
+		else if ((sum == 7) || (sum == 11))
+			System.out.println("You win");
+		else {
+			System.out.println("point is " + sum);
+			do {
+				dice1 = (int) (Math.random() * 6) + 1;
+				dice2 = (int) (Math.random() * 6) + 1;
+				point = dice1 + dice2;
+				System.out.println("You rolled " + dice1 + " + "
+						+ dice2 + " = " + point);
+				
+				if (point == sum)
+					System.out.println("You win");
+				
+				if (point == 7)
+					System.out.println("You lose");
+			} while ((point != 7) && (point != sum));
+		}	
+	}
+}
