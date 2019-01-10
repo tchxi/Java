@@ -1,0 +1,18 @@
+// *6.16 (Number of days in a year)
+
+public class Ex6_16 {
+	public static void main(String[] args) {
+		for (int i = 2014; i <= 2034; i++)
+			System.out.println("In " + i + ", there are " 
+					+ numberOfDaysInAYear(i) +" days");
+	}
+	
+	public static int numberOfDaysInAYear(int year) {
+		int n = 365;
+		
+		if ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0) && (year % 3200 != 0))
+			n = 366;
+		
+		return n;
+	}
+}
