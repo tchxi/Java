@@ -1,0 +1,19 @@
+// *2.23 (Cost of driving)
+import java.util.Scanner;
+
+public class Ex2_23 {
+	public static void main(String[] args) {
+		double distance, mile, price, cost;
+		Scanner input = new Scanner(System.in);
+		
+		System.out.print("Enter the driving distance: ");
+		distance = input.nextDouble();
+		System.out.print("Enter miles per gallon: ");
+		mile = input.nextDouble();
+		System.out.print("Enter price per gallon: ");
+		price = input.nextDouble();
+		cost = distance / mile * price;
+		
+		System.out.println("The cost of driving is $" + cost);
+	}
+}
