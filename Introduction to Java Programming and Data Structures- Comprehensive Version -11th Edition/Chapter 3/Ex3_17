@@ -1,0 +1,30 @@
+// *3.17 (Game: scissor, rock, paper)
+import java.util.Scanner;
+
+public class Ex3_17 {
+	public static void main(String[] args) {
+		String[] choice = {"scissor", "rock", "paper"};
+		int user = -1;
+		int computer = (int)(Math.random() * 3);
+		Scanner input = new Scanner(System.in);
+		
+		while ((user < 0) || (user > 2)) {
+			System.out.print("scissor (0), rock (1), paper (2): ");
+			user = input.nextInt();
+		}
+		
+		System.out.print("The computer is " + choice[computer] + ". ");
+		System.out.print("You are " + choice[user]);
+		
+		if (user == computer)
+			System.out.println(" too. It is a draw");
+		else if ((choice[user] == "scissor" && choice[computer] == "paper") ||
+				(choice[user] == "rock" && choice[computer] == "scissor") ||
+				(choice[user] == "paper" && choice[computer] == "rock"))
+			System.out.println(". You won");
+		else
+			System.out.println(". You lost");
+		
+		
+	}
+}
