@@ -1,0 +1,14 @@
+// *5.24 (Sum a series)
+
+public class Ex5_24 {
+	public static void main(String[] args) {
+		int n = 97;
+		double sum = 0;
+		
+		for (double i = 1, j = 3; i <= n; i += 2, j += 2) {
+			sum += i / j;
+		}
+		
+		System.out.println("Sum is " + sum);
+	}
+}
