@@ -1,0 +1,14 @@
+// *5.23 (Demonstrate cancellation errors)
+
+public class Ex5_23 {
+	public static void main(String[] args) {
+		int n = 50000;
+		double sum = 0;
+		
+		for (int i = 1; i <= n; i++) {
+			sum += Math.pow(i, -1);
+		}
+		
+		System.out.println("Sum is " + sum);
+	}
+}
