@@ -1,0 +1,27 @@
+// ** 3.22 (Geometry: point in a circle?)
+import java.util.Scanner;
+
+public class Ex3_22 {
+	public static void main(String[] args) {
+		double x, y, distance;
+		double r = 10;
+		double centreX = 0;
+		double centreY = 0;
+		Scanner input = new Scanner(System.in);
+		
+		System.out.print("Enter a point with two coordinates: ");
+		x = input.nextDouble();
+		y = input.nextDouble();
+		
+		distance = Math.pow(Math.pow(x - centreX, 2) + Math.pow(y - centreY, 2), 0.5);
+		
+		System.out.print("Point (" + x + ", " + y + ") is ");
+		if (distance < r)
+			System.out.println("in the circle");
+		else if (distance == r)
+			System.out.println("at the circle");
+		else
+			System.out.println("not in the circle");
+			
+	}
+}
