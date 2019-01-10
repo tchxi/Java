@@ -1,0 +1,42 @@
+// ** 5.45 (Statistics: compute mean and standard deviation)
+import java.util.Scanner;
+
+public class Ex5_45 {
+	public static void main(String[] args) {
+		int n = 10;
+		double[] array = new double[n];
+		Scanner input = new Scanner(System.in);
+		
+		System.out.print("Enter " + n + " numbers: ");
+		for (int i = 0; i < array.length; i++)
+			array[i] = input.nextDouble();
+		
+		System.out.println("The mean is " + mean(array));
+		System.out.println("The standard deviation is " + deviation(array));
+	}
+	
+	public static double mean(double[] array) {
+		double sum = 0;
+		
+		for (int i = 0; i < array.length; i++) {
+			sum += array[i];
+		}
+		
+		return sum / array.length;
+	}
+	
+	public static double deviation(double[] array) {
+		double sumOfSquare = 0;
+		double sum = 0;
+		
+		for (int i = 0; i < array.length; i++) {
+			sumOfSquare += Math.pow(array[i], 2);
+		}
+		
+		for (int i = 0; i < array.length; i++) {
+			sum += array[i];
+		}
+		
+		return Math.pow((sumOfSquare - Math.pow(sum, 2) / array.length) / (array.length - 1), 0.5);
+	}
+}
