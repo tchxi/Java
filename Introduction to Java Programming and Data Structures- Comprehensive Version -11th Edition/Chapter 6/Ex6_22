@@ -1,0 +1,37 @@
+// **6.22 (Math: approximate the square root)
+
+public class Ex6_22 {
+	public static void main(String[] args) {
+		long n = 2;
+		System.out.println("By Babylonian method, "
+				+ "the square root of " + n + " is "
+				+ sqrt(n));
+		System.out.println("By Math class, "
+				+ "the square root of " + n + " is "
+				+ Math.sqrt(n));
+	}
+	
+	// here I use "double" instead of "long"
+	public static double sqrt(double n) {
+		double lastGuess = 1; // any positive number
+		double error = 0.0001; // Math.abs((n - lastGuess * lastGuess) / (2 * n));
+		double nextGuess, difference;
+		
+		do {
+			nextGuess = (lastGuess + n / lastGuess) / 2;
+			difference = abs(nextGuess - lastGuess);
+			lastGuess = nextGuess;
+		} while (difference > error);
+		
+		return nextGuess;
+	}
+	
+	// I think it is better to use my own absolute method
+	// in this exercise
+	public static double abs(double n) {
+		if (n < 0)
+			n = -n;
+		
+		return n;
+	}
+}
