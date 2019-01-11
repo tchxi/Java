@@ -1,0 +1,30 @@
+// 6.37 (Format an integer)
+import java.util.Scanner;
+
+public class Ex6_37 {
+	public static void main(String[] args) {
+		int number, width;
+		Scanner input = new Scanner(System.in);
+		
+		System.out.print("Enter number: ");
+		number = input.nextInt();
+		System.out.print("Enter width: ");
+		width = input.nextInt();
+		System.out.println("format(" + number +", "
+					+ width + ") is "
+					+ format(number, width));
+		
+	}
+	
+	public static String format(int number, int width) {
+		String n = String.valueOf(number);
+		
+		if (n.length() < width) {
+			for (int i = n.length(); i < width; i++) {
+				n = "0".concat(n);
+			}
+		}
+		
+		return n;
+	}
+}
