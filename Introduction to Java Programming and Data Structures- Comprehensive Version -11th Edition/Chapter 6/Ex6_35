@@ -1,0 +1,21 @@
+// 6.35 (Geometry: area of a pentagon)
+import java.util.Scanner;
+
+public class Ex6_35 {
+	public static void main(String[] args) {
+		// int n;
+		double side;
+		Scanner input = new Scanner(System.in);
+		
+		// System.out.print("Enter the number of sides: ");
+		// n = input.nextInt();
+		System.out.print("Enter the side: ");
+		side = input.nextDouble();
+		System.out.println("The area of the pentagon is "
+				+ area(side));
+	}
+	
+	public static double area(double side) {
+		return (5 * Math.pow(side, 2)) / (4 * Math.tan(Math.PI / 5));
+	}
+}
