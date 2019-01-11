@@ -1,0 +1,36 @@
+// *7.29 (Game: dice)
+
+public class Ex7_29 {
+	public static void main(String[] args) {
+		int sum = 0;
+		int counter = 0;
+		int numberOfDice = 3;
+		int[] x = new int[numberOfDice];
+		int outcome = 9;
+		int[] dice = {1, 2, 3, 4, 5, 6};
+		int[] sumOfDice = new int[(int) Math.pow(dice.length, numberOfDice)];
+
+		System.out.println("With " + numberOfDice + " dices, here are "
+				+ "permutations of the sum of " + outcome);
+		
+		// What if we want a n-dice Version?
+		// Use recursion? N nested loop
+		
+		// Simple Version, only work for 3 dices
+		for (int i = 0; i < dice.length; i++)
+			for (int j = 0; j < dice.length; j++)
+				for (int k = 0; k < dice.length; k++) {
+					sumOfDice[(int) ((Math.pow(dice.length, 2) * i)
+					          + (Math.pow(dice.length, 1) * j)
+					          + (Math.pow(dice.length, 0) * k))] = dice[i] 
+					        		  + dice[j] + dice[k];
+					
+					if (dice[i] + dice[j] + dice[k] == outcome) {
+						counter++;
+						System.out.println("Case " + counter + ": "
+								+ dice[i] + " + " + dice[j] + " + "
+								+ dice[k] + " = " + outcome);
+					}
+				}
+	}
+}
