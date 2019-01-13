@@ -1,0 +1,43 @@
+// *7.29 (Game: dice)
+
+public class Ex7_29 {
+	public static void main(String[] args) {
+		int k;
+		int temp[];
+		int sum = 0;
+		int counter = 0;
+		int numberOfDice = 3; // any
+		int outcome = 9; // any
+		int dice = 6; // 0 ~ 9
+		int sumOfDice = (int) Math.pow(dice, numberOfDice);
+
+		System.out.println("With " + numberOfDice + " dices, here are "
+				+ "permutations of the sum of " + outcome);
+		
+		for (int i = 0; i < sumOfDice; i++) {
+			k = Integer.parseInt(Integer.toString(i, dice));
+			temp = new int[numberOfDice];
+			
+			for (int j = numberOfDice; j > 0; j--) {		
+				temp[j - 1] = k / (int) (Math.pow(10, j - 1)) + 1; // save the record in the temp array
+				sum += temp[j - 1];
+				k = k % (int) (Math.pow(10, j - 1));
+				
+			}
+			
+			// print the outcome
+			if (sum == outcome) {
+				counter++;
+				System.out.print("Case " + counter + ": ");
+				for (int j = numberOfDice; j > 0; j--) {
+					System.out.print(temp[j - 1]);
+					if (j - 1 != 0)
+						System.out.print(" + ");
+				}
+				System.out.println(" = " + sum);
+			}
+			
+			sum = 0;
+		}
+	}
+}
