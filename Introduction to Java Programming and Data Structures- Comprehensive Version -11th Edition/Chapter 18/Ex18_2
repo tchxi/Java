@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class Ex18_2 {
+  /** Main method */
+  public static void main(String[] args) {
+    // Create a Scanner
+    Scanner input = new Scanner(System.in);
+    System.out.print("Enter an index for a Fibonacci number: ");
+    int index = input.nextInt();
+
+    // Find and display the Fibonacci number
+    System.out.println("The Fibonacci number at index "  
+      + index + " is " + fib(index));
+  }
+
+  /** The method for finding the Fibonacci number */
+  public static long fib(long index) {
+	  long f0 = 0; // For fib(0)
+	  long f1 = 1; // For fib(1)
+	  long currentFib = 0;
+	  long n = index - 1;
+	  
+	  if (index == 0) // Base case
+	      return 0;
+	    else if (index == 1) // Base case
+	      return 1;
+	  
+	  for (int i = 1; i <= n; i++) {
+	  currentFib = f0 + f1;
+	  f0 = f1;
+	  f1 = currentFib;
+	  }
+	  // After the loop, currentFib is fib(n)
+	  
+	  return currentFib;
+  }
+}
