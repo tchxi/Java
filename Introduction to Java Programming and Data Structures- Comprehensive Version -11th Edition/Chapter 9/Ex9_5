@@ -1,0 +1,19 @@
+// *9.5 (Use the GregorianCalendar class)
+import java.util.*;
+
+public class Ex9_5 {
+	public static void main(String[] args) {
+		GregorianCalendar g = new GregorianCalendar();
+		
+		// Task 1
+		System.out.println("Today is " + g.get(GregorianCalendar.DAY_OF_MONTH)
+				+ "/" + g.get(GregorianCalendar.MONTH) // 0 for Jan
+				+ "/" + g.get(GregorianCalendar.YEAR));
+		
+		// Task 2
+		g.setTimeInMillis(1234567898765L);
+		System.out.println("Today is " + g.get(GregorianCalendar.DAY_OF_MONTH)
+		+ "/" + g.get(GregorianCalendar.MONTH) // 0 for Jan
+		+ "/" + g.get(GregorianCalendar.YEAR));
+	}
+}
