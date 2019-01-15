@@ -1,0 +1,19 @@
+// **9.9 (Geometry: n-sided regular polygon)
+
+public class Ex9_9 {
+	public static void main(String[] args) {
+		RegularPolygon p1 = new RegularPolygon();
+		RegularPolygon p2 = new RegularPolygon(6, 4);
+		RegularPolygon p3 = new RegularPolygon(10, 4, 5.6, 7.8);
+		
+		System.out.println("For p1, Perimeter is "
+				+ p1.getPerimeter() + " and Area is "
+				+ p1.getArea());
+		System.out.println("For p2, Perimeter is "
+				+ p2.getPerimeter() + " and Area is "
+				+ p2.getArea());
+		System.out.println("For p3, Perimeter is "
+				+ p3.getPerimeter() + " and Area is "
+				+ p3.getArea());
+	}
+}
