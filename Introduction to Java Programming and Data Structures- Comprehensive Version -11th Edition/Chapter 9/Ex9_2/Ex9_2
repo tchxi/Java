@@ -1,0 +1,13 @@
+// 9.2 (The Stock class)
+
+public class Ex9_2 {
+	public static void main(String[] args) {
+		Stock s = new Stock("ORCL", "Oracle Corporation");
+		s.setPreviousClosingPrice(34.5);
+		s.setCurrentPrice(34.35);
+		
+		System.out.println("The price-change percentage of "
+				+ s.getSymbol() + " is " 
+				+ s.getChangePercent() + "%");
+	}
+}
