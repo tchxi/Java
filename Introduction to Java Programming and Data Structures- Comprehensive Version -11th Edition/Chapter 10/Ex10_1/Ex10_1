@@ -1,0 +1,13 @@
+// *10.1 (The Time class)
+
+public class Ex10_1 {
+	public static void main(String[] args) {
+		Time t1 = new Time();
+		Time t2 = new Time(555550000);
+		Time t3 = new Time(5, 23, 55);
+		
+		System.out.println("For t1, " + t1.displayTime());
+		System.out.println("For t2, " + t2.displayTime());
+		System.out.println("For t3, " + t3.displayTime());
+	}
+}
