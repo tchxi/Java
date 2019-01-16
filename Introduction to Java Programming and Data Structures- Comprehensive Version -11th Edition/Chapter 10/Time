@@ -1,0 +1,47 @@
+
+public class Time {
+	private long hour, minute, second;
+	
+	// Constructor
+	Time() {
+		this.second = (System.currentTimeMillis() / 1000) % 60;
+		this.minute = ((System.currentTimeMillis() / 1000) / 60) % 60;
+		this.hour = (((System.currentTimeMillis() / 1000) / 60) / 60) % 24;
+	}
+	
+	Time(long millisSecond) {
+		this.second = ((System.currentTimeMillis() + millisSecond) / 1000) % 60;
+		this.minute = (((System.currentTimeMillis() + millisSecond) / 1000) / 60) % 60;
+		this.hour = ((((System.currentTimeMillis() + millisSecond) / 1000) / 60) / 60) % 24;
+	}
+	
+	Time(long hour, long minute, long second) {
+		this.second = second;
+		this.minute = minute;
+		this.hour = hour;
+	}
+	
+	// Getter method
+	public long getHour() {
+		return hour;
+	}
+	
+	public long getMinute() {
+		return minute;
+	}
+	
+	public long getSecond() {
+		return second;
+	}
+	
+	// Special method
+	public void setTime(long elapseTime) {
+		second = (elapseTime / 1000) % 60;
+		minute = ((elapseTime / 1000) / 60) % 60;
+		hour = (((elapseTime / 1000) / 60) / 60) % 24;
+	}
+	
+	public String displayTime() {
+		return hour + ":" + minute + ":" + second;
+	}
+}
