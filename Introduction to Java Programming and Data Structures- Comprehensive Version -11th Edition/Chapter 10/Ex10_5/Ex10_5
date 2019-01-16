@@ -1,0 +1,52 @@
+// *10.5 (Display the prime factors)
+import java.util.Scanner;
+
+public class Ex10_5 {
+	public static void main(String[] args) {
+		int n, temp;
+		StackOfIntegers factor = new StackOfIntegers();
+		Scanner input = new Scanner(System.in);
+		
+		System.out.print("Enter a number: ");
+		n = input.nextInt();
+		temp = n;
+		
+		// Decreasing order
+		System.out.println("Prime factor(s) of "
+				+ n + " in decreasing order: ");
+		for (int i = n; i > 1; i--) {
+			if ((temp % i == 0) && (isPrime(i))) {
+				factor.push(i);
+				temp /= i;
+				System.out.print(i + " ");
+				
+				if (i == factor.peek())
+					i++;
+			}
+		}
+		
+		// Increasing order
+		System.out.println("\nPrime factor(s) of "
+				+ n + " in increasing order: ");
+		while (!factor.empty())
+			System.out.print(factor.pop() + " ");
+	}
+	
+	public static boolean isPrime(int number) {
+		boolean prime = true;
+		
+		if(number == 1)
+			return false;
+		
+		for(int i = 2; i <= Math.pow(number,0.5); i++)
+		{
+			if(number % i == 0)
+			{
+				prime = false;
+				break;
+			}
+		}
+		
+		return prime;
+	}
+}
