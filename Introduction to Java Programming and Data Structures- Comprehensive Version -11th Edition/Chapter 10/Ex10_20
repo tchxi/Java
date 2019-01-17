@@ -1,0 +1,24 @@
+// *10.20 (Approximate e)
+import java.math.*;
+
+public class Ex10_20 {
+	public static void main(String[] args) {
+		int n = 1000; // larger, more precise
+		BigDecimal e = new BigDecimal(1);
+		
+		for (int i = 1; i <= n; i++) {
+			//e += Math.pow(factorial(i), -1);
+			e = e.add(BigDecimal.ONE.divide(factorial(i), 40, BigDecimal.ROUND_UP)); // for 40 digit
+			
+			System.out.println("e is " + e);
+		}			
+	}
+	
+	public static BigDecimal factorial(long n) {
+	    BigDecimal result = BigDecimal.ONE;
+	    for (int i = 1; i <= n; i++)
+	      result = result.multiply(new BigDecimal(i + ""));
+
+	    return result;
+	  }
+}
