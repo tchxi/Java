@@ -1,0 +1,20 @@
+// *10.17 (Square numbers)
+import java.math.*;
+
+public class Ex10_17 {
+	public static void main(String[] args) {
+		double k = 0;
+		int counter = 0;
+		BigDecimal max = new BigDecimal(Long.MAX_VALUE);
+		
+		System.out.println("The first 5 square numbers greater than Long.MAX_VALUE:");
+		
+		// Too slow, any better method?
+		for (BigDecimal i = BigDecimal.ONE; counter < 5; i = i.add(BigDecimal.ONE)) {
+			if (i.multiply(i).compareTo(max) > 0) {
+				System.out.println(i.multiply(i));
+				counter++;
+			}
+		}
+	}
+}
