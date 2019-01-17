@@ -1,0 +1,20 @@
+// 10.21 (Divisible by 5 or 6)
+import java.math.*;
+
+public class Ex10_21 {
+	public static void main(String[] args) {
+		int counter = 0;
+		BigDecimal a = new BigDecimal(Long.MAX_VALUE);
+		BigDecimal b = new BigDecimal(5);
+		BigDecimal c = new BigDecimal(6);
+		
+		System.out.println("The first 10 numbers greater than Long.MAX_VALUE that are divisible by 5 or 6:");
+		for (BigDecimal i = a; counter < 10; i = i.add(BigDecimal.ONE)) {
+			// No mod operator % in BigDecimal, use remainder function
+			if ((i.remainder(b).compareTo(BigDecimal.ZERO) == 0) || (i.remainder(c).compareTo(BigDecimal.ZERO) == 0)) {
+				System.out.println(i);
+				counter++;
+			}
+		}
+	}
+}
