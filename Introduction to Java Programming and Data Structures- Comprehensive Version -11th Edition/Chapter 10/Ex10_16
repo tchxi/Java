@@ -1,0 +1,24 @@
+// *10.16 (Divisible by 2 or 3)
+import java.math.*;
+
+public class Ex10_16 {
+	public static void main(String[] args) {
+		int counter = 0;
+		BigDecimal a = BigDecimal.ONE;
+		BigDecimal b = new BigDecimal(2);
+		BigDecimal c = new BigDecimal(3);
+		
+		// No Math.pow function for BigDecimal, use for loop 
+		for (int i = 0; i < 49; i++)
+			a = a.multiply(new BigDecimal(10));
+		
+		System.out.println("The first 10 numbers greater than 10 ^ 50 that are divisible by 2 or 6:");
+		for (BigDecimal i = a; counter < 10; i = i.add(BigDecimal.ONE)) {
+			// No mod operator % in BigDecimal, use remainder function
+			if ((i.remainder(b).compareTo(BigDecimal.ZERO) == 0) || (i.remainder(c).compareTo(BigDecimal.ZERO) == 0)) {
+				System.out.println(i);
+				counter++;
+			}
+		}
+	}
+}
