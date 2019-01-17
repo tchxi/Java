@@ -2,7 +2,7 @@
 
 public class Ex6_22 {
 	public static void main(String[] args) {
-		double n = 2;
+		long n = 1001;
 		System.out.println("By Babylonian method, "
 				+ "the square root of " + n + " is "
 				+ sqrt(n));
@@ -21,7 +21,7 @@ public class Ex6_22 {
 			nextGuess = (lastGuess + n / lastGuess) / 2;
 			difference = abs(nextGuess - lastGuess);
 			lastGuess = nextGuess;
-		} while (difference > error);
+		} while (difference != 0); // Best for setting error = 0
 		
 		return nextGuess;
 	}
