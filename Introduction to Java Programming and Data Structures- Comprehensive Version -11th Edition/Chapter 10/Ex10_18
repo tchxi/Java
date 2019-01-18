@@ -1,0 +1,39 @@
+// *10.18 (Large prime numbers)
+import java.math.*;
+
+public class Ex10_18 {
+	public static void main(String[] args) {
+		int counter = 0;
+		BigDecimal max = new BigDecimal(Long.MAX_VALUE);
+		BigDecimal n = new BigDecimal(10000000);
+		
+		System.out.println("The first 5 prime numbers larger than Long.MAX_VALUE:");
+		
+		// Use n to check the program, run too slow
+		for (BigDecimal i = max.add(BigDecimal.ONE); counter < 5; i = i.add(BigDecimal.ONE)) {
+			if (isPrime(i)) {
+				System.out.println(i);
+				counter++;
+			}
+		}
+	}
+	
+	public static boolean isPrime(BigDecimal number) {
+		boolean prime = true;
+		
+		if (number.compareTo(BigDecimal.ONE) == 0)
+			return false;
+		
+		// for faster, use sqrt function of BigDecimal
+		for (BigDecimal i = new BigDecimal(2); number.compareTo(i) > 0; i = i.add(BigDecimal.ONE))
+		{
+			if (number.remainder(i).compareTo(BigDecimal.ZERO) == 0)
+			{
+				prime = false;
+				break;
+			}
+		}
+		
+		return prime;
+	}
+}
