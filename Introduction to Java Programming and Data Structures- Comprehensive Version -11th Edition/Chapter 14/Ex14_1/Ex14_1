@@ -1,0 +1,47 @@
+// *14.1 (Display images)
+
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+
+public class Ex14_1 extends Application {
+	@Override
+	public void start(Stage primaryStage) {
+		GridPane pane = new GridPane();
+		
+		// Create array for easy insertion
+		Image[] image = new Image[4];
+		ImageView[] imageView = new ImageView[4];
+
+		image[0] = new Image("file:/Users/tchxi/Desktop/Prgramming Notes/EIE3375(Java)/Java Code/Introduction to Java Programming and Data Structures, Comprehensive Version (11th Edition)/Chapter 14/Ex14_1/UK.png");
+		image[1] = new Image("file:/Users/tchxi/Desktop/Prgramming Notes/EIE3375(Java)/Java Code/Introduction to Java Programming and Data Structures, Comprehensive Version (11th Edition)/Chapter 14/Ex14_1/Canda.png");
+		image[2] = new Image("file:/Users/tchxi/Desktop/Prgramming Notes/EIE3375(Java)/Java Code/Introduction to Java Programming and Data Structures, Comprehensive Version (11th Edition)/Chapter 14/Ex14_1/China.png");
+		image[3] = new Image("file:/Users/tchxi/Desktop/Prgramming Notes/EIE3375(Java)/Java Code/Introduction to Java Programming and Data Structures, Comprehensive Version (11th Edition)/Chapter 14/Ex14_1/US.png");
+		
+		// binding
+		for (int i = 0; i < image.length; i++) {
+			imageView[i] = new ImageView(image[i]);
+			imageView[i].fitHeightProperty().bind(pane.heightProperty().divide(2));
+			imageView[i].fitWidthProperty().bind(pane.widthProperty().divide(2));
+			
+		}
+		
+		// add them in grid
+		pane.add(imageView[0], 0, 0);
+		pane.add(imageView[1], 1, 0);
+		pane.add(imageView[2], 0, 1);
+		pane.add(imageView[3], 1, 1);
+		
+		Scene scene = new Scene(pane, 300, 200);
+		primaryStage.setTitle("Ex14_1");
+		primaryStage.setScene(scene);
+		primaryStage.show();
+	}
+	
+	public static void main(String[] args) {
+		launch(args);
+	}
+}
