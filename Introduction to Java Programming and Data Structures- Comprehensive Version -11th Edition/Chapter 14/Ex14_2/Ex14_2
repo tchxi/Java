@@ -1,0 +1,53 @@
+// *14.2 (Tic-tac-toe board)
+
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+
+public class Ex14_2 extends Application {
+	@Override
+	public void start(Stage primaryStage) {
+		int gridNumber = 3;
+		GridPane pane = new GridPane();
+		
+		// Create array for easy insertion
+		//Image[] image = new Image[3];
+		ImageView[] imageView = new ImageView[9];
+
+//		image[0] = new Image("file:");
+//		image[1] = new Image("file:/Users/tchxi/Desktop/Prgramming Notes/EIE3375(Java)/Java Code/Introduction to Java Programming and Data Structures, Comprehensive Version (11th Edition)/Chapter 14/Ex14_2/x.gif");
+//		image[2] = new Image("file:/Users/tchxi/Desktop/Prgramming Notes/EIE3375(Java)/Java Code/Introduction to Java Programming and Data Structures, Comprehensive Version (11th Edition)/Chapter 14/Ex14_2/o.gif");		
+		
+		// binding
+		// create 9 imageView
+		for (int i = 0; i < 9; i++) {
+			int k = (int) (Math.random() * 3);
+			if (k == 0)
+				imageView[i] = new ImageView(new Image("file:"));
+			else if (k == 1)
+				imageView[i] = new ImageView(new Image("file:/Users/tchxi/Desktop/Prgramming Notes/EIE3375(Java)/Java Code/Introduction to Java Programming and Data Structures, Comprehensive Version (11th Edition)/Chapter 14/Ex14_2/x.gif"));
+			else
+				imageView[i] = new ImageView(new Image("file:/Users/tchxi/Desktop/Prgramming Notes/EIE3375(Java)/Java Code/Introduction to Java Programming and Data Structures, Comprehensive Version (11th Edition)/Chapter 14/Ex14_2/o.gif"));
+			
+			imageView[i].fitHeightProperty().bind(pane.heightProperty().divide(gridNumber));
+			imageView[i].fitWidthProperty().bind(pane.widthProperty().divide(gridNumber));
+		}
+		
+		// add them in grid
+		for (int i = 0; i < gridNumber; i++)
+			for (int j = 0; j < gridNumber; j++)
+				pane.add(imageView[(int) (Math.pow(gridNumber, 1) * i + Math.pow(gridNumber, 0) * j)], i, j);
+		
+		Scene scene = new Scene(pane, 300, 300);
+		primaryStage.setTitle("Ex14_1");
+		primaryStage.setScene(scene);
+		primaryStage.show();
+	}
+	
+	public static void main(String[] args) {
+		launch(args);
+	}
+}
