@@ -33,6 +33,10 @@ public class Ex14_4 extends Application {
 			pane.getChildren().add(label);
 		}
 		
+		// pane is fixed on the up-left corner,
+		// I do not let user to see the flaw
+		primaryStage.setResizable(false);
+		
 		Scene scene = new Scene(pane);
 	    primaryStage.setTitle("Ex14_4"); // Set the stage title
 	    primaryStage.setScene(scene); // Place the scene in the stage
