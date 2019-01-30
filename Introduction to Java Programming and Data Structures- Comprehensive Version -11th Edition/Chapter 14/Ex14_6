@@ -1,0 +1,60 @@
+// *14.6 (Game: display a checkerboard)
+
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+import javafx.scene.shape.Rectangle;
+
+public class Ex14_6 extends Application {
+	public void start (Stage primaryStage) {
+		int startX = 0;
+		int startY = 0;
+		int sizeX = 20;
+		int sizeY = 20;
+		int n = 8;
+		
+		// Use GridePane for easy insertion
+		GridPane pane = new GridPane();
+		
+		for (int i = 0; i < n; i++, startY += sizeY)
+			for (int j = 0; j < n; j++, startX += sizeX) {
+				// create black and white rectangle every time
+				Rectangle black = new Rectangle(startX, startY, sizeX, sizeY);
+				black.setFill(Color.BLACK);
+				Rectangle white = new Rectangle(startX, startY, sizeX, sizeY);
+				white.setFill(Color.WHITE);
+				
+				
+				// pattern
+				if (i % 2 == 0) {
+					if (j % 2 == 0) {
+						pane.add(white,j,i);
+					}
+					else
+						pane.add(black,j,i);
+				}
+				else {
+					if (j % 2 != 0) {
+						pane.add(white,j,i);
+					}
+					else
+						pane.add(black,j,i);
+				}
+			}
+		
+		// pane is fixed on the up-left corner,
+		// I do not let user to see the flaw
+		primaryStage.setResizable(false);
+		
+		Scene scene = new Scene(pane);
+		primaryStage.setTitle("Ex14_6");
+		primaryStage.setScene(scene);
+		primaryStage.show();
+	}
+	
+	public static void main(String[] args) {
+		launch(args);
+	}
+}
