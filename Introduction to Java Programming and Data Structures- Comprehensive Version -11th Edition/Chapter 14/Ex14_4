@@ -1,0 +1,45 @@
+// 14.4 (Color and font)
+
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+import javafx.scene.layout.HBox;
+import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
+import javafx.geometry.Insets;
+import javafx.scene.text.*;
+
+public class Ex14_4 extends Application {
+	public void start(Stage primaryStage) {
+		int n = 5;
+		
+		// HBox with 30 spacing
+		Pane pane = new HBox(30);
+		pane.setPadding(new Insets(30,0,30,0));
+		
+		// 
+		for (int i = 0; i < n; i++) {
+			Label label = new Label("JavaFx");
+			// required style
+			label.setFont(Font.font("Times New Roman",
+					FontWeight.BOLD, FontPosture.ITALIC, 24));
+			// random filled color and opacity
+			label.setTextFill(Color.color(Math.random(), Math.random(), Math.random()
+					, Math.random()));
+			// rotation
+			label.setRotate(90);
+			
+			pane.getChildren().add(label);
+		}
+		
+		Scene scene = new Scene(pane);
+	    primaryStage.setTitle("Ex14_4"); // Set the stage title
+	    primaryStage.setScene(scene); // Place the scene in the stage
+	    primaryStage.show();
+	}
+	
+	public static void main(String[] args) {
+		launch(args);
+	}
+}
